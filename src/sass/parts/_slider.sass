@@ -1,0 +1,291 @@
+#slider 
+    margin: 0 auto
+    padding-top: 48px
+    color: black
+    @media(min-width: 992px)
+        padding-top: 56px
+
+input 
+    display: none
+
+#slide1:checked ~ #banner
+    background: url(../img/спальня-1.jpg) center top no-repeat/cover;
+
+#slide2:checked ~ #banner
+    background: url(../img/спальня-2.jpg) center top no-repeat/cover;
+
+#slide3:checked ~ #banner
+    background: url(../img/кухня-1.jpg) center top no-repeat/cover;
+
+#slide4:checked ~ #banner
+    background: url(../img/кухня-2.jpg) center top no-repeat/cover;
+
+
+#slide1:checked ~ #banner .slider-list 
+    margin-left: 0 
+
+#slide2:checked ~ #banner .slider-list
+    margin-left: -100% 
+
+#slide3:checked ~ #banner .slider-list
+    margin-left: -200% 
+
+#slide4:checked ~ #banner .slider-list
+    margin-left: -300% 
+
+#overflow 
+    width: 100%
+    overflow: hidden
+
+#banner
+    padding-top: 70px
+   
+.banner-black-box
+    position: relative
+    &:before
+        position: absolute
+        content: ''
+        display: block;
+        width: 55% 
+        background: rgba(0,0,0,.45)
+        left: -86px
+        top: 0px
+        height: 432px
+        transform: skew(-15deg)
+        @media(min-width: 475px)
+            height: 458px
+        @media(min-width: 768px)
+            height: 517px
+            width: 39.5% 
+
+#banner .slider-list 
+    width: 400%
+
+#banner article 
+    width: 25%
+    float: left
+
+/* Control Setup */
+.slider-controls
+    margin-bottom: 28px
+
+.slider-controls-box
+    position: relative
+    width: 230px
+    text-align: center
+    @media(max-width: 767px)
+        margin: 0 auto
+
+#controls 
+    max-width: 255px
+    height: 50px
+
+#controls label  
+    width: 26px
+    height: 40px
+    
+
+#active
+    position: absolute
+    top: 7px
+    left: 55px
+
+#active label 
+    -webkit-border-radius: 5px
+    -moz-border-radius: 50%
+    border-radius: 50%
+    display: inline-block
+    width: 15px
+    height: 15px
+    margin: 6px;
+    background: transparent
+    border: 1px solid White
+
+#active label:hover 
+    cursor: pointer
+    
+#controls label:hover 
+    opacity: 0.8
+    cursor: pointer
+
+#slide1:checked ~ #banner #controls label:nth-child(2), 
+#slide2:checked ~ #banner #controls label:nth-child(3), 
+#slide3:checked ~ #banner #controls label:nth-child(4), 
+#slide4:checked ~ #banner #controls label:nth-child(1) 
+    background: url('../img/next.png') no-repeat
+    float: right
+    display: block
+
+#slide2:checked ~ #banner #controls label:nth-child(1),
+#slide3:checked ~ #banner #controls label:nth-child(2),
+#slide4:checked ~ #banner #controls label:nth-child(3),
+#slide1:checked ~ #banner #controls label:nth-child(4) 
+    background: url('../img/prev.png') no-repeat
+    float: left
+    display: block
+
+#slide1:checked ~ #banner #active label:nth-child(1),
+#slide2:checked ~ #banner #active label:nth-child(2),
+#slide3:checked ~ #banner #active label:nth-child(3),
+#slide4:checked ~ #banner #active label:nth-child(4),
+    background: $white-color
+    box-shadow: inset 0px 0px 0px 2px rgba(0,0,0,1)
+
+#banner 
+    background: #fff
+    background: rgb(252,255,244) /* Old browsers */
+
+#banner .slider-list 
+    -webkit-transform: translateZ(0)
+    -webkit-transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000) 
+    -moz-transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000) 
+    -ms-transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000) 
+     -o-transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000) 
+        transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000) /* easeInOutQuart */
+
+    -webkit-transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000) 
+    -moz-transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000) 
+    -ms-transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000) 
+     -o-transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000) 
+        transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000) /* easeInOutQuart */
+
+#slider 
+    -webkit-transform: translateZ(0)
+    -webkit-transition: all 0.5s ease-out
+    -moz-transition: all 0.5s ease-out
+    -o-transition: all 0.5s ease-out
+    transition: all 0.5s ease-out
+
+
+#controls label
+    -webkit-transform: translateZ(0)
+    -webkit-transition: opacity 0.2s ease-out
+    -moz-transition: opacity 0.2s ease-out
+    -o-transition: opacity 0.2s ease-out
+    transition: opacity 0.2s ease-out
+
+#controls, #banner, #active, #active label
+    -webkit-transform: translateZ(0)
+    -webkit-transition: all 0.5s ease-out
+    -moz-transition: all 0.5s ease-out
+    -o-transition: all 0.5s ease-out
+    transition: all 0.5s ease-out
+
+.slide-container-mod
+    position: relative
+    overflow: hidden
+
+    @media(min-width: 1366px)
+        width: 1260px
+
+.slide-container-mod:before
+    content: ''
+    display: block
+    position: absolute
+    top: -1px
+    left: 24px
+    height: 100%
+    border: 1px solid white
+    transform: rotate(10deg)
+
+    @media(min-width: 768px)
+        left: 42px
+        transform: rotate(15deg)
+
+.slider-box
+    margin-bottom: 25px
+
+.slider-ttl
+    letter-spacing: -2px
+    font-size: 36px
+    font-family: 'intro', sans-serif
+    background-color: rgba(255,255,255,.67)
+    display: inline-block
+    padding: 10px 35px 10px 23px
+    margin-bottom: 10px
+    margin-left: 22px
+    clip-path: polygon(4% 0,100% 0,96% 100%,0 100%)
+    @media(min-width: 475px)
+        font-size: 50px
+    @media(min-width: 767px)
+        padding: 10px 40px 10px 31px
+        font-size: 90px
+        margin-left: 33px
+        clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%)
+
+.slider-info
+    font-size: 15px
+    font-family: "intro"
+    font-weight: 900
+    font-style: italic
+    padding: 7px 29px 14px
+    clip-path: polygon(5% 0%, 100% 0%, 93% 100%, 0% 100%)
+    background-color: rgba(255,255,255,.67)
+    margin-left: 14px
+    position: relative
+    &:before
+        content: ''
+        width: 60%
+        position: absolute
+        border: 1px solid black
+        bottom: 10px
+        left: 0px
+        right: 0px
+        margin: 0 auto
+    @media(min-width: 475px)
+        font-size: 27px
+    @media(min-width: 767px)
+        clip-path: polygon(6% 0%, 100% 0%, 93% 100%, 0% 100%)
+        font-size: 36px
+        padding: 7px 65px 20px 65px
+        &:before
+            width: 77% 
+
+.slider-price
+    display: inline-block
+    color: white
+    background: linear-gradient(to right, #21d221 1%,#047f04 100%)
+    vertical-align: text-top
+    padding: 0 8px 0 8px
+    font-family: "intro"
+    margin-left: -10px
+    box-shadow: 10px 10px 14px -3px rgba(0,0,0,0.6)
+    box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.75)
+    clip-path: polygon(6% 0,100% 0,95% 100%,0 100%)
+    @media(min-width: 475px)
+        vertical-align: middle
+        padding: 0px 21px
+    @media(min-width: 767px)
+        vertical-align: middle
+        padding: 0px  40px 0px 16px 
+        clip-path: polygon(8% 0%, 100% 0%, 93% 100%, 0% 100%)
+
+.slider-price span
+    font-size: 27px
+    font-weight: 900
+    margin-left: 10px
+    margin-right: 10px
+    line-height: 1.1
+    @media(min-width: 475px)
+        font-size: 34px
+    @media(min-width: 767px)
+        font-size: 45px
+
+.slider-ideas
+    margin-bottom: 47px
+    text-align: center
+    position: relative
+
+.slider-ideas-txt
+    color: $white-color
+    text-transform: uppercase
+    font-size: 17px
+    line-height: 1.2
+    letter-spacing: 0.5px
+    margin-bottom: 20px
+
+@media(min-width: 768px)
+    .slider-ideas
+        text-align: left
+    .slider-ideas-txt
+        font-size: 19px

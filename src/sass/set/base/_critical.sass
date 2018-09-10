@@ -1,0 +1,73 @@
+html, body
+  height: 100%
+
+body
+  background-color: #fff
+  font-family: $base-font
+  font-size: 16px
+  line-height: 1
+  color: $black-color
+  position: relative
+  overflow-x: hidden
+
+
+img
+  max-width: 100%
+  height: auto
+  
+
+*
+  box-sizing: border-box
+
+a
+  text-decoration: none
+  display: inline-block
+  
+h1,h2,h3,h4,h5,h6,p
+  margin: 0px
+
+ul, li 
+  list-style-type: none
+  margin: 0
+  padding: 0
+  
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary 
+    display: block
+
+
+audio,
+canvas,
+progress,
+video 
+    display: inline-block
+    vertical-align: baseline
+
+.btn
+  padding: 7px 12px 
+  color: $white-color
+  background-color: $main-color
+  border-radius: 4px
+  font-size: 13px
+  &:hover
+    background: linear-gradient(to right, #21d221 1%,#047f04 100%)
+    transition-duration: 0.5s
+  &--ideas
+    font-size: 22px
+    border: 2px solid $white-color
+    text-transform: uppercase
+    font-weight: bold
+    letter-spacing: 0.8px
+    padding: 12px 16px
